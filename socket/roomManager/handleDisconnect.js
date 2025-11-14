@@ -15,7 +15,6 @@ const handleDisconnect = (io, socket) => {
         room.hostName = room.players[0].name;
       } else {
         deleteRoom(roomId);
-        console.log(`Room ${roomId} deleted`);
         return;
       }
     }
@@ -25,8 +24,6 @@ const handleDisconnect = (io, socket) => {
 
     // updates for other room players
     broadcastRoomUpdate(io, roomId); 
-
-    console.log(`${leavingPlayer.name} disconnected from ${roomId}`);
     break;
   }
 };

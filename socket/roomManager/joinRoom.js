@@ -37,8 +37,6 @@ const joinRoomHandler = (io, socket, data) => {
 
   socket.emit("joinedRoom", { roomId });
 
-  console.log(`${name} joined room ${roomId}`);
-
   // used to show update player when joined
   broadcastRoomUpdate(io, roomId);
 };

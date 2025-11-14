@@ -15,12 +15,10 @@ const leaveRoomHandler = (io, socket, data) => {
   const leavingPlayer = room.players[playerIndex];
   room.players.splice(playerIndex, 1);
 
-  console.log(`${leavingPlayer.name} left room ${roomId}`);
 
   // If no players left delete the room
   if (room.players.length === 0) {
     deleteRoom(roomId);
-    console.log(`Room ${roomId} deleted`);
     return;
   }
 

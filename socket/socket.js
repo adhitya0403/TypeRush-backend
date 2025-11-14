@@ -6,7 +6,6 @@ import playerFinishedHandler from "./roomManager/playerFinished.js";
 
 const socketHandler = (io) => {
   io.on("connection", (socket) => {
-    console.log("Client connected:", socket.id);
 
     roomHandler(io, socket);
 

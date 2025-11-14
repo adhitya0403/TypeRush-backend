@@ -4,8 +4,7 @@ const createRoomHandler = (io, socket, data) => {
   const { roomId, hostName, avatar, difficulty, gameMode } = data;
 
   if (getRoomData(roomId)) {
-    console.log("Room already exists! - ", roomId);
-    return;
+      return;
   }
 
   const newRoom = {
@@ -32,7 +31,6 @@ const createRoomHandler = (io, socket, data) => {
   registerRoom(roomId, newRoom);
   socket.join(roomId);
 
-  console.log(`Room created: ${roomId} by ${hostName}`);
 };
 
 export default createRoomHandler;
